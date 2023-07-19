@@ -58,7 +58,7 @@ To run the Food API locally on your machine, follow these steps:
    # On Windows:
    . env/Scripts/activate
    # On macOS/Linux:
-   source venv/bin/activate
+   source env/bin/activate
    ```
 
 4. Install the required dependencies:
