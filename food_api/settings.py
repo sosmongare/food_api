@@ -17,9 +17,10 @@ import os
 import environ
 
 
-env = environ.Env()
-environ.Env.read_env()
-PORT = env('PORT')
+# env = environ.Env()
+# environ.Env.read_env()
+
+PORT = os.environ.get("PORT")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e^h#bz31fooeppe#2+)gj9743^h4%q!lyq^dv06$@2a*6s61=w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG","False").lower() == "true"
 
 ALLOWED_HOSTS = []
 
