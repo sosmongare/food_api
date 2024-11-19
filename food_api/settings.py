@@ -34,8 +34,9 @@ SECRET_KEY = 'django-insecure-e^h#bz31fooeppe#2+)gj9743^h4%q!lyq^dv06$@2a*6s61=w
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG","False").lower() == "true"
-
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+# DEBUG= True
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(",")
+# ALLOWED_HOSTS =["127.0.0.1"]
 
 
 # Application definition
@@ -85,21 +86,21 @@ WSGI_APPLICATION = 'food_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'test',
-#         'USER': 'root',
-#         'PASSWORD': 'password',
-#         'HOST': '127.0.0.1',  # Use 'localhost' if the database is on the same machine
-#         'PORT': '3306',  # Typically 3306 for MySQL
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.parse(
-        'postgresql://test_db_j7fh_user:FBR6cQVbdHithElc37wWbIfEz6D1cGKM@dpg-csu795lumphs738n7bb0-a.oregon-postgres.render.com/test_db_j7fh')
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'test',
+        'USER': 'root',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',  # Use 'localhost' if the database is on the same machine
+        'PORT': '3306',  # Typically 3306 for MySQL
+    }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.parse(
+#         'postgresql://test_db_j7fh_user:FBR6cQVbdHithElc37wWbIfEz6D1cGKM@dpg-csu795lumphs738n7bb0-a.oregon-postgres.render.com/test_db_j7fh')
+# }
 
 
 # Password validation
