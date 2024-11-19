@@ -20,7 +20,7 @@ import environ
 # env = environ.Env()
 # environ.Env.read_env()
 
-PORT = os.environ.get("PORT")
+PORT = os.environ.get('PORT','8000')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
